@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 0 0% 80%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 129 46% 25%;
+    --primary-foreground: 129 46% 25%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 0 0% 97%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5em;
+
+    --body-font: var(--font-noto);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply flex min-h-screen flex-col bg-background text-foreground;
+  }
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+/* Set up the body */
+
+body {
+  font-family: var(--body-font);
+}
+
+/* form elements */
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  padding-top: 0;
+  width: 100%;
+}
+
+::placeholder {
+  color: hsl(var(--input));
+  opacity: 0.2;
+}
+
+input,
+textarea,
+button,
+select,
+div,
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+}
+
+/* hide arrows Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+/* animation */
+
+@media (min-width: 1024px) {
+  .animate-underline {
+    position: relative;
+    color: hsl(var(--foreground));
+  }
+
+  /* The pseudo-element styles */
+  .animate-underline::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    top: 100%;
+    left: 0;
+    background: hsl(var(--foreground));
+    transition: transform 0.1s;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  /* The animation will be triggered on hover */
+  .animate-underline:hover::after {
+    height: 1px;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+
+/* table */
+
+table th {
+  /* padding: 1em; */
+  font-weight: 400;
+}
+
+table td {
+  padding: 1em;
+  font-size: 13px;
+  border-bottom: 1px solid #f2f2f2;
+  /* white-space: pre-wrap; */
+}
+
+table tr:hover {
+  background: #f2f2f2;
+  /* cursor: pointer; */
+}
+
+/* table tr:nth-child(even) {
+  background-color: #f2f2f2;
+} */
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #f2f2f2;
+}

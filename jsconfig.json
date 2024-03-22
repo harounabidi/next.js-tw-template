@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["./*"],
+      "@components/*": ["components/*"],
+      "@lib/*": ["lib/*"],
+      "@public/*": ["public/*"],
+      "@icons/*": ["components/icons/*"],
+      "@variables/*": ["app/variables/*"],
+      "@controllers/*": ["lib/controllers/*"],
+      "@config/*": ["config/*"],
+      "@fonts/*": ["assets/fonts/*"]
+    }
+  }
+}
